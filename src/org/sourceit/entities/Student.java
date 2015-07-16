@@ -7,14 +7,11 @@ public class Student extends Person {
     protected String idNumber;
     protected double gpa;
 
-    public Student() {
-        this.idNumber = "000001";
-        this.gpa = 3.0;
-    }
+    protected final String properties = super.properties + ",Id,GPA";
 
-    public Student(String idNumber, double gpa) {
-        this.idNumber = idNumber;
-        this.gpa = gpa;
+    public Student() {
+        this.idNumber = "000000";
+        this.gpa = 0.0;
     }
 
     public Student(String name, int age, Gender gender, String idNumber, double gpa) {
@@ -24,33 +21,8 @@ public class Student extends Person {
     }
 
     @Override
-    public String getName() {
-        return super.getName();
-    }
-
-    @Override
-    public void setName(String name) {
-        super.setName(name);
-    }
-
-    @Override
-    public int getAge() {
-        return super.getAge();
-    }
-
-    @Override
-    public void setAge(int age) {
-        super.setAge(age);
-    }
-
-    @Override
-    public Gender getGender() {
-        return super.getGender();
-    }
-
-    @Override
-    public void setGender(Gender gender) {
-        super.setGender(gender);
+    public String getProperties() {
+        return properties;
     }
 
     public String getIdNumber() {
@@ -71,9 +43,6 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "Student{{" + super.toString() + "}" +
-                "idNumber='" + idNumber + '\'' +
-                ", gpa=" + gpa +
-                '}';
+        return super.toString() + "," + idNumber + "," + gpa;
     }
 }

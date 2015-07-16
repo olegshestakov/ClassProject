@@ -8,14 +8,11 @@ public class CollegeStudent extends Student {
     protected int year;
     protected Subject major;
 
-    public CollegeStudent() {
-        this.year = 2008;
-        this.major = Subject.CS;
-    }
+    protected final String properties = super.properties + ",Year,Major";
 
-    public CollegeStudent(int year, Subject major) {
-        this.year = year;
-        this.major = major;
+    public CollegeStudent() {
+        this.year = -1;
+        this.major = null;
     }
 
     public CollegeStudent(String name, int age, Gender gender, String idNumber, double gpa, int year, Subject major) {
@@ -25,60 +22,29 @@ public class CollegeStudent extends Student {
     }
 
     @Override
-    public String getName() {
-        return super.getName();
+    public String getProperties() {
+        return properties;
     }
 
-    @Override
-    public void setName(String name) {
-        super.setName(name);
+    public int getYear() {
+        return year;
     }
 
-    @Override
-    public int getAge() {
-        return super.getAge();
+    public void setYear(int year) {
+        this.year = year;
     }
 
-    @Override
-    public void setAge(int age) {
-        super.setAge(age);
+    public Subject getMajor() {
+        return major;
     }
 
-    @Override
-    public Gender getGender() {
-        return super.getGender();
-    }
-
-    @Override
-    public void setGender(Gender gender) {
-        super.setGender(gender);
-    }
-
-    @Override
-    public String getIdNumber() {
-        return super.getIdNumber();
-    }
-
-    @Override
-    public void setIdNumber(String idNumber) {
-        super.setIdNumber(idNumber);
-    }
-
-    @Override
-    public double getGpa() {
-        return super.getGpa();
-    }
-
-    @Override
-    public void setGpa(double gpa) {
-        super.setGpa(gpa);
+    public void setMajor(Subject major) {
+        this.major = major;
     }
 
     @Override
     public String toString() {
-        return "CollegeStudent{{" + super.toString() + "}" +
-                "year=" + year +
-                ", major=" + major +
-                '}';
+        return super.toString() + "," + year +
+                "," + major;
     }
 }

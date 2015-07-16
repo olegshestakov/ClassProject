@@ -8,6 +8,8 @@ public class Person {
     protected int age;
     protected Gender gender;
 
+    protected final String properties = "Name,Age,Gender";
+
     public Person() {
         this.name = "Your name";
         this.age = 25;
@@ -18,6 +20,10 @@ public class Person {
         this.name = name;
         this.age = age;
         this.gender = gender;
+    }
+
+    public String getProperties() {
+        return properties;
     }
 
     public String getName() {
@@ -46,10 +52,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", gender=" + gender +
-                '}';
+        return "" + this.name + "," + this.age + "," + this.gender;
     }
 }
