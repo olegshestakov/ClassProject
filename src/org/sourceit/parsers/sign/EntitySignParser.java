@@ -18,11 +18,6 @@ public class EntitySignParser<T extends Person> implements Parseable<T> {
     private T tempEntity;
     private List<T> entityCache = new ArrayList<>(100);
 
-    /**
-     * Constructor, sets file and initialize cache
-     *
-     * @param file -- source of persons.
-     */
     public EntitySignParser(File file, T entity) {
         this.file = file;
         this.tempEntity = entity;

@@ -12,7 +12,7 @@ import java.util.List;
 
 public class EntityBinaryParser<T extends Person> implements Parseable<T> {
 
-    List<T> entityCache = new ArrayList<>(10);
+    private List<T> entityCache = new ArrayList<>(10);
     private File file;
     private T tempEntity;
 

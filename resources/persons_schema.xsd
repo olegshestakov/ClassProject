@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:my="http://www.example.com/Persons"
+           xmlns="http://www.example.com/Persons"
+           targetNamespace="http://www.example.com/Persons">
+
+    <xs:element name="persons">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="person"
+                            type="Person"
+                            minOccurs="1"
+                            maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="teachers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="teacher"
+                            type="my:Teacher"
+                            minOccurs="1"
+                            maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="students">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="student"
+                            type="my:Student"
+                            minOccurs="1"
+                            maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="college_students">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="college_student"
+                            type="my:CollegeStudent"
+                            minOccurs="1"
+                            maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Person">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"></xs:element>
+            <xs:element name="age" type="xs:int"></xs:element>
+            <xs:element name="gender" type="my:Gender"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Teacher">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"></xs:element>
+            <xs:element name="age" type="xs:int"></xs:element>
+            <xs:element name="gender" type="my:Gender"></xs:element>
+            <xs:element name="salary" type="xs:double"></xs:element>
+            <xs:element name="subject" type="my:Subject"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Student">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"></xs:element>
+            <xs:element name="age" type="xs:int"></xs:element>
+            <xs:element name="gender" type="my:Gender"></xs:element>
+            <xs:element name="idNumber" type="xs:string"></xs:element>
+            <xs:element name="gpa" type="xs:double"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CollegeStudent">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"></xs:element>
+            <xs:element name="age" type="xs:int"></xs:element>
+            <xs:element name="gender" type="my:Gender"></xs:element>
+            <xs:element name="idNumber" type="xs:string"></xs:element>
+            <xs:element name="gpa" type="xs:double"></xs:element>
+            <xs:element name="year" type="xs:int"></xs:element>
+            <xs:element name="major" type="my:Subject"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="Gender">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="male"/>
+            <xs:enumeration value="female"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Subject">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CS"/>
+            <xs:enumeration value="CH"/>
+            <xs:enumeration value="EN"/>
+            <xs:enumeration value="EE"/>
+            <xs:enumeration value="CM"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

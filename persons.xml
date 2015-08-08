@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<my:persons xmlns:my="http://www.example.com/Persons"
+            xsi:schemaLocation="http://www.example.com/Persons resources/persons_schema.xsd"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <person>
+        <name>Oleg Shestakov</name>
+        <age>24</age>
+        <gender>male</gender>
+    </person>
+
+    <person>
+        <name>Piter Parker</name>
+        <age>20</age>
+        <gender>male</gender>
+    </person>
+
+    <person>
+        <name>Hillary Clinton</name>
+        <age>60</age>
+        <gender>female</gender>
+    </person>
+
+</my:persons>
